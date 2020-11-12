@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+@font-face {
+  font-family: LatoFont;
+  src: url(./font/Lato-Regular.ttf);
+}
+*{
+  --main-color : #CBA550 ;
+  --bg : #404041 ;
+  --bg-opacity : rgb(74,165,156,0.1) ;
+}

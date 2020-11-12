@@ -1,0 +1,38 @@
+.Nav{
+    position: fixed;
+    z-index: 99999;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 60px;
+}
+.Nav .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.Nav .navbar-collapse {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+}
+.Nav .navbar-collapse a{
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 50px;
+    font-size: 18px;
+    transition: all 0.5s ease-in-out;
+}
+.Nav .navbar-collapse a:hover{
+    color: var(--main-color);;
+    text-decoration-style: wavy;
+}
+.Nav .dropdown-menu{
+    position: absolute;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}

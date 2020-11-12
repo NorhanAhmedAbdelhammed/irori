@@ -1,0 +1,68 @@
+.Menu{
+   
+}
+.Menu section{
+    /* position: relative; */
+    /* width: 100%;
+    height: 130vh; */
+    /* overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+    width: 100%;
+    height: 1500vh;
+    overflow: hidden;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+/* .Header section::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.4) , transparent);
+    z-index: 100;
+} */
+/* .Menu img{
+    width: 10%;
+    height: 25%;
+} */
+.Menu .container {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    /* text-align: center;
+    padding: 30px;
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    display: flex; */
+
+}
+/* .Menu section div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    pointer-events: none;
+    transition: opacity 2s;
+    display: flex;
+    justify-content: center;
+} */
+.Menu .empty-space {
+    height: 800px;
+}
+.Menu .logo {
+    height: 100%;
+}
+/*.Menu #Menu_bg{
+    z-index: 10;
+}
+.Menu #Menu_plates{
+    z-index: 11;
+} */
