@@ -1,0 +1,78 @@
+.Reservation{
+    display: flex;
+    justify-content: start;
+    height: 580px;
+}
+.Reservation section{
+    width: 50%;
+    overflow: hidden;
+}
+.Reservation .Reservation_form{
+    background-color: #000;
+    /* text-align: center; */
+    padding: 80px;
+}
+.Reservation .Reservation_form form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 10%
+}
+.Reservation_form form div{
+    margin-bottom: 10px;
+}
+.Reservation .Reservation_form h1{
+    color: #ffff;
+    font-size: 60px;
+    font-weight: bolder;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.Reservation .Reservation_form h2{
+    color: #ffff;
+    font-size: 18px;
+    font-style: italic;
+    margin: auto;
+    text-align: center;
+    margin-top: 40px;
+}
+.Reservation img{
+    width: 100%;
+    height: 100%;
+    transition: all 2s;
+}
+.Reservation img:hover{
+    /* width: 120%; */
+    transform: scale(1.2);
+}
+.Reservation_form .MuiInput-underline:before{
+    border-bottom: 1px solid  var(--gold);
+}
+.Reservation_form .MuiInput-underline::after{
+    border-bottom: 1px solid  #ffff;
+}
+.Reservation_form .MuiInputBase-input{
+    color: #ffff;
+}
+.Reservation_form .MuiInputBase-input:hover{
+    border-bottom: 1px solid  #ffff;
+}
+.Reservation_form .MuiNativeSelect-icon{
+    color: #ffff;
+}
+.Reservation_form .MuiFormLabel-root{
+    color: #ffff;
+}
+.Reservation_form select option{
+    background-color: #fff;
+    color: var(--gray) !important;
+}
+.Reservation_form .MuiFormLabel-root.Mui-focused{
+    color: #fff;
+}
+.Reservation .Reservation_form .MuiFormControl-root{
+    vertical-align: baseline;
+    width: 40%;
+    margin-left: 8px;
+}

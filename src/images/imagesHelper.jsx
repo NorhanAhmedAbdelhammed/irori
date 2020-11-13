@@ -16,6 +16,8 @@ import openHoursIcons from "./icons/openHours.png"
 // ---------------------------//
 import plate_1 from "./menu/green-curry.png"
 import plate_2 from "./menu/pad-thai-with-lobster.png"
+import table from "./book-a-table.jpg"
+
 
 export const bg = {
     bg_1,
@@ -32,5 +34,6 @@ export const icons = {
 }
 export const menu = {
     plate_1,
-    plate_2
+    plate_2,
+    table
 }

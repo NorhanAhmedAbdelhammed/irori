@@ -6,7 +6,11 @@ body {
   src: url(./font/Lato-Regular.ttf);
 }
 *{
-  --main-color : #CBA550 ;
+  --main-color : #CEA950 ;
   --bg : #404041 ;
   --bg-opacity : rgb(74,165,156,0.1) ;
+  --gold:#CEA950 ;
+  --gray : #404041 ;
+  --blue :#357272 ;
+
 }

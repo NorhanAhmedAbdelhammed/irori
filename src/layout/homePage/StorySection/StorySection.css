@@ -9,6 +9,7 @@
 .StroySection .video{
     width: 50%;
     height: 65vh;
+    display: inline-block;
     /* padding-top: 100px; */
 }
 .StroySection .video video{
@@ -17,13 +18,11 @@
     filter: grayscale(100%);
 }
 .StroySection .story{
-    text-align: center;
     padding: 40px;
-    /* padding-top: 300px; */
+    padding-top: 0px;
     width: 40%;
     align-items: center;
     margin: auto;
-    position: absolute;
 }
 .StroySection .story h1{
     color: var(--main-color);

@@ -1,10 +1,10 @@
-// import { Opacity, RotateLeft } from "@material-ui/icons";
-// import React, {  useState, useEffect , useRef } from "react";
-// import { menu  } from "../../../images/imagesHelper";
-// import { Row , Col } from 'react-bootstrap';
-// import './Menu.css';
+import { Opacity, RotateLeft } from "@material-ui/icons";
+import React, {  useState, useEffect , useRef } from "react";
+import { menu  } from "../../../images/imagesHelper";
+import { Row , Col } from 'react-bootstrap';
+import './Menu.css';
 
-// function Menu() {
+function Menu() {
 
 
 
@@ -114,122 +114,106 @@
 //   width: 100%;
 // }
 ////====================================================
-// const[ logoHeight,setLogoHeight ]=useState(0)
-// const[ logoWidth,setLogoWidth ]=useState(0)
-// const [ offesetY, setOffesetY ] = useState(0)
-// const imageRef_1 = useRef();
-// const imageRef_2 = useRef();
-// const imgStyle = {
-//   width: '110px' ,
-//   height : '110px' ,
-//   position: `${offesetY > 900   ? 'fixed' : 'relative'}` ,
-//   top: '50%' ,
-//   display:'block'
-// }
-// const containerStyle = {
-//   position: `${offesetY > 900 ? 'fixed' : ''}` ,
-//   height: `${logoHeight<350 ? logoHeight : 350}px` ,
-//   background:'red',
-//   top: '0' ,
-//   left: '0',
-//   width: `${logoHeight<350 ? "100" : logoWidth}%` ,
-// }
-// useEffect(()=>{
-//   window.addEventListener("scroll", handleScroll)
-//   return () => window.removeEventListener("scroll",handleScroll)
-// })
-// useEffect(()=>{
-//   window.addEventListener("scroll", handlerScrollerForRotate)
-//   return () => window.removeEventListener("scroll",handlerScrollerForRotate)
-// })
+const[ logoHeight,setLogoHeight ]=useState(0)
+const[ logoWidth,setLogoWidth ]=useState(0)
+const [ offesetY, setOffesetY ] = useState(0)
 
-// function handleScroll() {
-//     let scrollTop = window.scrollY,
-//             minHeight = 0,
-//             logoHeight = Math.max(minHeight, scrollTop*0.1);
-//     setLogoHeight(logoHeight)
-//     if(logoHeight >= 400){
-//       // if(logoWidth >= 90){
-//       //  setLogoWidth(logoHeight*0.12)
-//       // console.log(100 - logoHeight*0.01)
-//       // return
-//       // }else{
-//       // setLogoWidth(logoHeight*0.12)
-//       // console.log(logoWidth*0.01)
-//       // }
-//       setLogoWidth(logoHeight*0.12)
+const imageRef_1 = useRef();
+const imageRef_2 = useRef();
+const imageRef_3 = useRef();
+const menuRef = useRef();
 
-//     }
-// }
-// const handlerScrollerForRotate = ()=>{
-//   setOffesetY(window.pageYOffset)
-//   requestAnimationFrame(() => {
-//     const rotation = (offesetY-(offesetY*0.999))*200
-//     imageRef_1.current.style.transform = `rotate(${rotation}deg)`;
-//     imageRef_2.current.style.transform = `rotate(${rotation}deg)`;
-//   })
-// }
-//   return (
-//     <div className="Menu" style={{Opacity: `${logoWidth >= 99 ? "0" : "1"} `}}>
-//       <section>
-//         {/* <div className="Menu_bg">
-//         </div> */}
-//         <Row  style={containerStyle}>
-//           <Col>
-//               <img 
-//               src={offesetY > 4000 ? menu.plate_1 : menu.plate_2} 
-//               // src={menu.plate_2} 
-//               style={{...imgStyle , left:'25%'}}
-//               ref={imageRef_1} 
-//               // className='logo'
-//               />
-//           </Col>
-//           <Col>
-//               <img 
-//             src={offesetY > 4000 ? menu.plate_1 : menu.plate_2} 
-//             // src={menu.plate_2} 
-//             style={{...imgStyle , left:'50%'}}
-//             ref={imageRef_2} 
-//             // className='logo'
-//             />
-//           </Col>
+const imgStyle = {
+  width: '200px' ,
+  height : '200px' ,
+  // position: `${offesetY > 1800   ? 'absolute' : 'relative'}` ,
+  // top: `${logoHeight/8}%` ,
+  // top: '40%' ,
+  display:'block'
+}
+const containerStyle = {
+  // position: `${offesetY > 1800 && offesetY < 8800 ? 'absolute' : ''}` ,
+  height: `${logoHeight<400 ? logoHeight : 400}px` ,
+  background: `${logoHeight<350 ? '#CEA950' : '#404041'}` , 
+  // top: `${logoHeight/2}%` ,
+  // left: '0',
+  width: `${logoHeight<350 ? "100" : logoWidth}%` ,
+  display: 'flex' ,
+  justifyContent: "space-around"
+}
+useEffect(()=>{
+  window.addEventListener("scroll", handleScroll)
+  return () => window.removeEventListener("scroll",handleScroll)
+})
+useEffect(()=>{
+  window.addEventListener("scroll", handlerScrollerForRotate)
+  return () => window.removeEventListener("scroll",handlerScrollerForRotate)
+})
 
-//         </Row>
-//         <div className="empty-space"></div>
+function handleScroll() {
+    let scrollTop = window.scrollY,
+            minHeight = 0,
+            logoHeight = Math.max(minHeight, scrollTop*0.1);
+    setLogoHeight(logoHeight)
+    if(logoHeight >= 400){
+      setLogoWidth(logoHeight*0.3)
+    }
+}
+const handlerScrollerForRotate = ()=>{
+  setOffesetY(window.pageYOffset)
+  requestAnimationFrame(() => {
+    const rotation = (offesetY-(offesetY*0.999))*300
+    console.log("rotation" + (offesetY-(offesetY*0.999))*300)
+    imageRef_1.current.style.transform = `rotate(${rotation}deg)`;
+    imageRef_2.current.style.transform = `rotate(${rotation}deg)`;
+    imageRef_3.current.style.transform = `rotate(${rotation}deg)`;
+    console.log( menuRef.current.getBoundingClientRect())
+    console.log("top")
+  })
+}
+  return (
+    <div className="Menu" style={{Opacity: `${logoWidth >= 99 ? "0" : "1"} `}}
+        ref={menuRef}
+    >
+      {/* <section> */}
+        {/* <div className="Menu_bg">
+        </div> */}
+        <Row  style={containerStyle} className="container">
+          {/* <Col> */}
+              <img 
+              src={offesetY > 3500 ? menu.plate_1 : menu.plate_2} 
+              // src={menu.plate_2} 
+              style={{...imgStyle , left:'0%'}}
+              ref={imageRef_1} 
+              // className='logo'
+              />
+          {/* </Col>
+          <Col> */}
+              <img 
+            src={offesetY > 3500 ? menu.plate_1 : menu.plate_2} 
+            // src={menu.plate_2} 
+            style={{...imgStyle , left:'0%'}}
+            ref={imageRef_2} 
+            // className='logo'
+            />
+          {/* </Col>
+          <Col> */}
+              <img 
+            src={offesetY > 3500 ? menu.plate_1 : menu.plate_2} 
+            // src={menu.plate_2} 
+            style={{...imgStyle , left:'0%' }}
+            ref={imageRef_3} 
+            // className='logo'
+            />
+          {/* </Col> */}
+
+        </Row>
+        <div className="empty-space"></div>
      
-//       </section>
-//     </div>
-//   );
-// }
-import React, { Component } from 'react';
-import VizSensor from 'react-visibility-sensor';
-
-class VizAwareImg extends Component {
-  state = {
-    imgViz: false
-  }
-  render() {
-    return (
-      <VizSensor
-        onChange={(isVisible) => {
-          this.setState({imgViz: isVisible})
-        }}
-      >
-        <img
-          src={this.props.src}
-          style={{
-            width: 300,
-            height: 300,
-            opacity: this.state.imgViz ? 1 : 0.25,
-            transition: 'opacity 500ms linear'
-          }}
-        />
-      </VizSensor>
-    );
-  }
+      {/* </section> */}
+    </div>
+  );
 }
 
-export default VizAwareImg
-
-// export default Menu;
+export default Menu;
 ////=========================================================
